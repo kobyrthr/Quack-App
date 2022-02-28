@@ -11,7 +11,7 @@ const routes = require('./routes');
 
 /* === Instanced Modules === */
 const app = express();
-const routes = require("./routes/profilePage");
+//onst routes = require("./routes/profilePage");
 /* === Configuration === */
 const config = require('@Quack-App/config');
 
