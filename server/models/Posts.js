@@ -21,7 +21,8 @@ const postSchema = new Schema(
             ref: "Comments",
         },
         quack: {
-            type: [String]
+            type: Schema.Types.ObjectId, 
+            ref: "Quacks",
         }
     },
     {
