@@ -23,11 +23,11 @@ app.use(cors());
 
 /* === Routes & Controllers === */
 
-app.use("/api", routes)
+app.use("/api", require('./routes/profilePage'))
 //app.all("/api/*", (req, res, next) => {
 //	res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
 //})
-require('./routes/auth')
+//require('./routes/auth')
 
 
 //Data connection:

@@ -1,7 +1,8 @@
 const db = require("../models/index")
+const Create = require("../models/Posts")
 
 const createPost =(req, res) => {
-  db.Posts.create(req.body, (err, savedPost) => {
+  Create.create(req.body, (err, savedPost) => {
     if(err){
       return res.status(400).json({
         message: "Cannot save the post",
