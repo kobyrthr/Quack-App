@@ -1,6 +1,6 @@
 const db = require("../models")
 
-const profileInfos = (req,res) => {
+const profileInfos = async (req,res) => {
   try{
     const foundUser = await db.Profile.findById(req.params.id)
     return res.status(200).json({
@@ -16,7 +16,7 @@ const profileInfos = (req,res) => {
         message: "internal err for find user profile"})
         }
   }
-}
+
 
 const userPosts = (req, res) =>{
   db.Profile.findById(req.params.id, (err, foundProfile) => {
@@ -74,7 +74,7 @@ const updatePost = (req, res) => {
     req.body,
     {new:true}, (err, updatedPost) => {
       if (err) {
-        retrun res.status(400).json({
+        return res.status(400).json({
           message: "cannot update post",
           error: err
         })
@@ -103,7 +103,7 @@ const destroyPost = (req, res) => {
     })
 }
 
-module.export{
+module.export= {
 profileInfos,
 userPosts,
 postComments,
