@@ -11,6 +11,9 @@ const getPosts = (id) =>{
 const getPostComments = (id) =>{
     return clientAPIs.get(`${profilePage}/${id}/comments`);
 }
+const createPost = (data) =>{
+    return clientAPIs.post(`${profilePage}`, data)
+}
 const updatePost = (id, data) =>{
     return clientAPIs.put(`${profilePage}/${id}`, data);
 }

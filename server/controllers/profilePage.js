@@ -1,5 +1,21 @@
 const db = require("../models")
 
+const createPost =(req, res) => {
+  db.Posts.create(req.body, (err, savedPost) => {
+    if(err){
+      return res.status(400).json({
+        message: "Cannot save the post",
+        error: err
+      })
+    }
+    return res.status(201).json({
+      message:"successful in creating the post",
+      data: savedPost
+    })
+  })
+
+}
+
 const profileInfos = async (req,res) => {
   try{
     const foundUser = await db.Profile.findById(req.params.id)
@@ -104,6 +120,7 @@ const destroyPost = (req, res) => {
 }
 
 module.exports = {
+createPost,
 profileInfos,
 userPosts,
 postComments,
