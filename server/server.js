@@ -24,14 +24,28 @@ app.use(cors());
 /* === Routes & Controllers === */
 
 app.use("/api", routes)
-app.all("/api/*", (req, res, next) => {
-	res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
-})
+//app.all("/api/*", (req, res, next) => {
+//	res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
+//})
 require('./routes/auth')
 
+
+//Data connection:
+const mongoose = require("mongoose");
+const db = mongoose.connection;
+const dbUrl = process.env.MONGO_URL;
+mongoose   
+    .connect(dbUrl)
+    .then(() => {
+        console.log(`MongoDB connected at ${db.host}: ${db.port}.`)
+    })
+    .catch((err) => { 
+        console.log(`MongoDB failed to connect. Error: ${err}`)
+    });
+/*
 app.all("/api/*", (req, res, next) => {
 	res.send("Not the backend APIs we want")
-})
+})*/
 //SUPER AMAZING MAGICAL MONOREPO FULL STACK MIDDLEWARE
 //This targets all routes that aren't specified by our specific server routes that are not "/api"
 //ANY REQUESTS not covered by our routes will get piped into this middleware! This literally hands over control to React

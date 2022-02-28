@@ -1,4 +1,4 @@
-const db = require("../models")
+const db = require("../models/index")
 
 const createPost =(req, res) => {
   db.Posts.create(req.body, (err, savedPost) => {
@@ -19,13 +19,13 @@ const createPost =(req, res) => {
 
 
 const profileInfo = async (req,res) => {
-
   try{
     const foundUser = await db.Profile.findById(req.params.id)
     return res.status(200).json({
       message:"found user profile",
       data: foundUser
     })
+    res.send(`the founduser is this ${foundUser}`);
   }
   catch(err) {
     return res
@@ -35,8 +35,6 @@ const profileInfo = async (req,res) => {
         }
 
 }
-
-
 
 const userPosts = (req, res) =>{
   db.Profile.findById(req.params.id, (err, foundProfile) => {
@@ -130,4 +128,5 @@ userPosts,
 postComments,
 updatePost,
 destroyPost,
+//index
 }

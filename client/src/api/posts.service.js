@@ -5,6 +5,10 @@ const profilePage = "/profilepage";
 const getProfile = () =>{
     return clientAPIs.get(`${profilePage}`)
 }
+
+const getProfile = () =>{
+  return clientAPIs.get(`${profilePage}`)
+}
 const getPosts = (id) =>{
     return clientAPIs.get(`${profilePage}/${id}`);
 }
