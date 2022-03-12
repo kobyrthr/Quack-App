@@ -30,10 +30,10 @@ Bonus
 9. Ability to view trending posts <br>
 
 ## User Flow:
-
+![User Flow Diagram](./Photos/Quack!%20App.png)
 
 ## Entity Relationship Diagram:
-
+![ERD](./Photos/Blank%20diagram%20-%20Page%201.png)
 
 ## Wireframes:
 
@@ -53,7 +53,7 @@ Bonus
 
 
 ## Additional information:
-Developed by Moises, Koby, Nu Nu, Sabina, and Dominick
+Developed by Moises, Koby, NuNu, Sabina, and Dominick
 
 ## App Demo
 https://github.com/Moises-Giron/Quack-App/
