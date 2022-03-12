@@ -36,7 +36,11 @@ Bonus
 ![ERD](./Photos/Blank%20diagram%20-%20Page%201.png)
 
 ## Wireframes:
-
+![Edit Profile](./Photos/Quackapp%20Desktop%20-%20Edit%20Profile.png)
+![Login](Photos/Quackapp%20Desktop%20-%20Login.png)
+![My Profile](Photos/Quackapp%20Desktop%20-%20My%20Profile.png) 
+![Newsfeed](Photos/Quackapp%20Desktop%20-%20Newsfeed.png)
+![Post ID Page](Photos/Quackapp%20Desktop%20-%20Post%20ID%20Page.png)
 
 ## Technologies Used:
     - MongoDB
