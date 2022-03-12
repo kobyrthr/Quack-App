@@ -1,0 +1,8 @@
+{
+  "name": "Quack-App",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Moises-Giron/Quack-App.git",
+  "author": "moises-giron-01 <moisesgiron2@gmail.com>",
+  "license": "MIT"
+}
