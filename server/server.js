@@ -12,7 +12,7 @@ const cors = require('cors');
 const app = express();
 
 /* === Configuration === */
-const config = require('@practice-monorepo/config');
+const config = require('@Quack-App/config');
 
 /* === Middleware === */
 app.use(express.static(path.join('build')));
