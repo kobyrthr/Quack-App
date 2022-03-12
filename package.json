@@ -4,5 +4,21 @@
   "main": "index.js",
   "repository": "https://github.com/Moises-Giron/Quack-App.git",
   "author": "moises-giron-01 <moisesgiron2@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn --cwd server start",
+    "build": "yarn --cwd client build && mv ./client/build ./server/build",
+    "start-server-dev": "yarn --cwd server dev",
+    "start-client-dev": "yarn --cwd client start",
+    "dev": "concurrently --kill-others --handle-input -n client,server 'npm:start-client-dev' 'npm:start-server-dev'"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
 }
