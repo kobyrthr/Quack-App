@@ -1,8 +1,25 @@
+const config = require("../config/auth.config")
+const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs");
+const db = require("../models/User");
 
-const register = async (req,res) => {
+const signUp = async (req,res) => {
+	const User = new User({
+		username: req.body.username,
+		password: bcrypt.hashSync(req.body.password, 10),
+	})
+	user.save((err, user) => {
+		if (err) {
+			res.status(500). send ({message: err});
+			return;
+		}
+		res.send ({ message: "User was registered successfully!"});
+	});
+};
+
+const registerPassword = async (req,res) => {
 	try {
-		const foundUser = await db.User.findOne({email: req.body.email})
+		const foundUser = await db.User.findOne({email: req.body.username})
 
 		if(foundUser) {
 			const salt = await bcrypt.genSaltSync(10);
@@ -18,7 +35,7 @@ const register = async (req,res) => {
 
 			return res
 				.status(201)
-				.json({status: 201, message: ""})
+				.json({status: 201, message: "You are now registered!"})
 		}
 
 		return res
