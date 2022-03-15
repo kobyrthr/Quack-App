@@ -1,41 +1,60 @@
+const config = require("../config/auth.config")
+const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs");
+const userSchema = require("../models/User");
 
-const register = async (req,res) => {
-	try {
-		const foundUser = await db.User.findOne({email: req.body.email})
 
-		if(foundUser) {
-			const salt = await bcrypt.genSaltSync(10);
-			const hash = await bcrypt.hashSync(req.body.password, salt);
-
-			const updatedUser = await db.User.findByIdAndUpdate(
-				{_id: foundUser._id},
-				{
-					$set: {password: hash}
-				},
-				{new: true}
-            )
-
-			return res
-				.status(201)
-				.json({status: 201, message: ""})
+const signUp = async (req,res) => {
+	const user = new userSchema({
+		username: req.body.username,
+		password: bcrypt.hashSync(req.body.password, 10),
+	})
+	user.save((err, user) => {
+		if (err) {
+			res.status(500). send ({message: err});
+			return;
 		}
+		res.send ({ message: "User was registered successfully!"});
+	});
+};
 
-		return res
-			.status(400)
-			.json({status: 400, message: " Email Address is incorrect or not in the database."})
 
-	} catch(err) {
-		return res.status(500).json({
-			status: 500,
-			errorMsg: err,
-			message: "Site Broke"
-		})
-	}
-}
+const logIn = async (req,res) => {
+   userSchema.username.findOne({
+	   username: req.body.username
+   })
+   .exec((err, user) => {
+	   if (err) {
+		   res.status(500).send({message: err});
+	   }
+	   if (!user) {
+		   return res.status(404).send({message: "User Not Found"})
+	   }
 
-const login = async (req,res) => {
-    try {
-        const foundUser = await db.User.findOne
-    }
+	   let passwordIsValid = bcrypt.compareSync(
+		   req.body.password,
+		   user.password
+	   );
+	   if(!passwordIsValid) {
+		   return res.send(401).send({
+			   accessToken: null,
+			   message: "Wrong Password!"
+		   });
+	   }
+
+	   let token = jwt.sign({id: user.id}, config.secret, {
+		   expiresIn: 86400 // one day
+	   });
+	   
+	   res.status(200).send({
+		   id: user._id,
+		   username: user.username,
+		   accessToken: token
+	   });
+   });
+};
+
+module.exports = {
+	signUp,
+	logIn
 }
