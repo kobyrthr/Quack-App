@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cors);
 
 /* === Routes & Controllers === */
-
+require('./routes/auth')
 
 /* === Server Listener === */
 app.listen(config.PORT, () => {
