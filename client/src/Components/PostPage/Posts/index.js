@@ -1,27 +1,8 @@
-import './App.css';
-
-function App() {
+function Posts() {
   return (
 <div class="container">
 
-    <div class="row">
-
-                    
-    <h1>H1 Heading</h1>
-    <h2>H2 Heading</h2>
-    <p><b>Bolded text</b></p>
-    <p>Regular text</p>
-    <button>I'm a primary button</button><br></br>
-    <button class="button-secondary">I'm a secondary button</button>
-
-    </div>
-
-    <div class="row">
-        <form action="/" method="POST">
-
-        </form>
-    </div>
-
+  {/* THE POST FORM GOES HERE */}
 
     <div class="row">
 
@@ -54,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default Posts;
