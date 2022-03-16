@@ -6,7 +6,8 @@ const express = require('express');
 const cors = require('cors');
 
 /* === Internal Modules === */
-// const routes = require('./routes');
+const routes = require('./routes');
+
 
 /* === Instanced Modules === */
 const app = express();
@@ -21,6 +22,11 @@ app.use(express.json());
 app.use(cors());
 
 /* === Routes & Controllers === */
+
+app.use("/api", routes)
+app.all("/api/*", (req, res, next) => {
+	res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
+})
 require('./routes/auth')
 app.use("/api", routes)
 
