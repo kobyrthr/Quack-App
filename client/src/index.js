@@ -19,6 +19,8 @@ ReactDOM.render(
 <button class="button-secondary">I'm a secondary button</button>
 
 </div> */}
+
+{/* added new components */}
     <PostForm/>
     <Posts />
 
