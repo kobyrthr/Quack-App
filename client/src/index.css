@@ -8,7 +8,9 @@
   --purple:#7076CE;
 }
 
-
+.postForm{
+  min-width:90% ;
+}
 
 .post-card{
  
@@ -57,3 +59,4 @@
  
 
 }
+    

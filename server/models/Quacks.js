@@ -3,13 +3,15 @@ const Schema = mongoose.Schema;
 
 const quackSchema = new Schema(
     {
-        quack: {
-            type: Boolean,
-        },
-        profile: {
+        post: {
             type: Schema.Types.ObjectId, 
-            ref: "Profile",
-        }
+            ref: "Posts",
+        },
+        quacks: {
+            type: [Schema.Types.ObjectId],
+            ref:'Profile'
+        },
+        
     }
 )
 

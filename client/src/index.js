@@ -2,11 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './normalize.css'
 import './skeleton.css'
-import App from './App';
+import './index.css'
+import Posts from './Components/PostPage/Posts'
+import PostForm from './Components/PostPage/PostForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  {/* <div class="row">
+
+                    
+<h1>H1 Heading</h1>
+<h2>H2 Heading</h2>
+<p><b>Bolded text</b></p>
+<p>Regular text</p>
+<button>I'm a primary button</button><br></br>
+<button class="button-secondary">I'm a secondary button</button>
+
+</div> */}
+    <PostForm/>
+    <Posts />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
