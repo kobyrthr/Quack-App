@@ -54,7 +54,12 @@ const logIn = async (req,res) => {
    });
 };
 
+const userBoard = async (req, res) => {
+	res.status(200).send("user content");
+}
+
 module.exports = {
 	signUp,
-	logIn
+	logIn,
+	userBoard,
 }

@@ -1,3 +1,7 @@
+const auth = require("./auth");
+
 module.exports = {
-    auth: require ("./auth")
+    signUp,
+	logIn,
+    userBoard
 }
