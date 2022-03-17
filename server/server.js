@@ -6,8 +6,6 @@ const express = require('express');
 const cors = require('cors');
 
 /* === Internal Modules === */
-const routes = require('./routes');
-
 
 /* === Instanced Modules === */
 const app = express();
