@@ -1,10 +1,11 @@
 export default function LoginPage() {
     return (
-        <div class="container">
+        <div class="container login">
 
-            <div class="row">
 
-                <div class="columns 6">
+            <div class="row one">
+
+                <div class="columns four">
 
                     <form> 
                         <h3>Log In</h3>
