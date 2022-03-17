@@ -1,6 +1,8 @@
 const db = require("../models")
 
+
 const profileInfo = async (req,res) => {
+
   try{
     const foundUser = await db.Profile.findById(req.params.id)
     return res.status(200).json({
@@ -14,7 +16,9 @@ const profileInfo = async (req,res) => {
       .json({status:500,
         message: "internal err for find user profile"})
         }
+
 }
+
 
 
 const userPosts = (req, res) =>{
