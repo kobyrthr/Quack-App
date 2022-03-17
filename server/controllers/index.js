@@ -1,12 +1,12 @@
 
-const auth = require("./auth");
-const {profileInfos, userPosts, postComments, updatePost, destroyPost,} = require("./profilePage");
+const {signUp, logIn, userBoard} = require("./auth");
+const {profileInfo, userPosts, postComments, updatePost, destroyPost} = require("./profilePage");
 
 module.exports = {
     signUp,
-	  logIn,
+	logIn,
     userBoard,
-    profileInfos, 
+    profileInfo, 
     userPosts, 
     postComments, 
     updatePost, 

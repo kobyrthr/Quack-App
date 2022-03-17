@@ -1,17 +1,17 @@
 const path = require('path');
-require('dotenv').config({path: '../.env'});
+require('dotenv').config({path: './.env'});
 
 /* === External Modules === */
 const express = require('express');
 const cors = require('cors');
 
 /* === Internal Modules === */
-const routes = require('./routes');
 
 
 /* === Instanced Modules === */
 const app = express();
-const routes = require("./routes");
+const routes = require('./routes');
+
 /* === Configuration === */
 const config = require('@Quack-App/config');
 
@@ -28,7 +28,6 @@ app.all("/api/*", (req, res, next) => {
 	res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
 })
 require('./routes/auth')
-app.use("/api", routes)
 
 app.all("/api/*", (req, res, next) => {
 	res.send("Not the backend APIs we want")
