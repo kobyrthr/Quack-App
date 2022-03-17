@@ -7,4 +7,4 @@ router.get("/:id/comments", profilePage.postComments),
 router.put("/:id", profilePage.updatePost),
 router.delete("/:id", profilePage.destroyPost),
 
-module.export = router;
+module.exports = router;

@@ -103,7 +103,7 @@ const destroyPost = (req, res) => {
     })
 }
 
-module.export= {
+module.exports = {
 profileInfos,
 userPosts,
 postComments,
