@@ -5,6 +5,8 @@ import './skeleton.css'
 import './index.css'
 import Posts from './Components/PostPage/Posts'
 import PostForm from './Components/PostPage/PostForm';
+import LoginPage from './Components/LoginPage'
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,6 +25,7 @@ ReactDOM.render(
 {/* added new components */}
     <PostForm/>
     <Posts />
+    <LoginPage />
 
   </React.StrictMode>,
   document.getElementById('root')
