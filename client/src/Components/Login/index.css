@@ -4,6 +4,15 @@
 .password { 
     width: 40vh;
 }
-button {
-    margin: 1vh;
+/* input {
+    display: flex;
+    align-items: center;
+} */
+input {
+    padding: 5px;
 }
+h6 {
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
