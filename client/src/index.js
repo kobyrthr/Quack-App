@@ -5,7 +5,7 @@ import './skeleton.css'
 import './index.css'
 import Posts from './Components/PostPage/Posts'
 import PostForm from './Components/PostPage/PostForm';
-import LoginPage from './Components/LoginPage'
+import LoginPage from './Components/Login'
 
 
 ReactDOM.render(
