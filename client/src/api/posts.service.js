@@ -3,10 +3,6 @@ import clientAPIs from "./axios.config.js";
 const profilePage = "/profilepage";
 
 const getProfile = () =>{
-    return clientAPIs.get(`${profilePage}`)
-}
-
-const getProfile = () =>{
   return clientAPIs.get(`${profilePage}`)
 }
 const getPosts = (id) =>{
@@ -25,4 +21,4 @@ const destroyPost = (id) =>{
     return clientAPIs.delete(`${profilePage}/${id}`);
 }
 
-export {getProfile, getPosts, getPostComments, updatedPost, destroyPost}
+export {getProfile, getPosts, getPostComments, destroyPost}

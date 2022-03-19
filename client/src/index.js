@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './normalize.css'
 import './skeleton.css'
 import './index.css'
+import PostPage from './Components/PostPage'
 import Posts from './Components/PostPage/Posts'
 import PostForm from './Components/PostPage/PostForm';
 import LoginPage from './Components/Login'
@@ -24,10 +25,11 @@ ReactDOM.render(
 </div> */}
 
 {/* added new components */}
+<PostPage/>
     {/* <PostForm/>
     <Posts /> */}
     {/* <LoginPage /> */}
-    <EditProfilePage />
+    {/* <EditProfilePage /> */}
 
   </React.StrictMode>,
   document.getElementById('root')
