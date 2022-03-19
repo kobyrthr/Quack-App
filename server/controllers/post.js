@@ -10,22 +10,15 @@ const Post = require('../models/Posts')
             })
         }
         else {
-            
-            Post.create({
-                content:"hi i'm a post"
-            }),
+            // Post.create({
+            //     content:"hi i'm a post"
+            // }),
             console.log(allPosts)
         
         }
     }
 
     )
-}
-
-function createPost (req,res){
-    Post.create({
-        content:"hi i'm a post"
-    })
 }
 
 module.exports = {
