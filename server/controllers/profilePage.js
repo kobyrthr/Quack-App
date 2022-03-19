@@ -1,13 +1,16 @@
-const db = require("../models/index")
+//const db = require("../models/index")
+const Post = require("../models/Posts");
+const Profile = require("../models/Profile")
 
 const createPost =(req, res) => {
-  db.Posts.create(req.body, (err, savedPost) => {
+  Post.create(req.body, (err, savedPost) => {
     if(err){
       return res.status(400).json({
         message: "Cannot save the post",
         error: err
       })
     }
+    console.log(savedPost);
     return res.status(201).json({
       message:"successful in creating the post",
       data: savedPost
@@ -20,7 +23,7 @@ const createPost =(req, res) => {
 
 const profileInfo = async (req,res) => {
   try{
-    const foundUser = await db.Profile.findById(req.params.id)
+    const foundUser = await Profile.findById(req.params.id)
     return res.status(200).json({
       message:"found user profile",
       data: foundUser
@@ -37,14 +40,15 @@ const profileInfo = async (req,res) => {
 }
 
 const userPosts = (req, res) =>{
-  db.Profile.findById(req.params.id, (err, foundProfile) => {
+  Profile.findById(req.params.id, (err, foundProfile) => {
     if(err) {
       return res.status(400).json({
         message: "cannot find profile",
         error: err
       })
     }
-    foundProfile.Posts.find().exec((err, allPosts) => {
+    console.log(foundProfile);
+    foundProfile.posts.find().exec((err, allPosts) => {
       if (err){
         return res.status(400),json({
           message: "cannot find all the user posts",
@@ -62,14 +66,14 @@ const userPosts = (req, res) =>{
 }
 
 const postComments = (req, res) =>{
-  db.Posts.findById(req.params.id, (err, foundPosts) => {
+  Post.findById(req.params.id, (err, foundPosts) => {
     if(err) {
       return res.status(400).json({
         message: "cannot find post",
         error: err
       })
     }
-    foundPosts.Comments.find().exec((err, allComments) => {
+    foundPosts.comments.find().exec((err, allComments) => {
       if (err){
         return res.status(400),json({
           message: "cannot find all the user posts",
@@ -87,7 +91,7 @@ const postComments = (req, res) =>{
 }
 
 const updatePost = (req, res) => {
-  db.Posts.findByIdAndUpdate (
+  Post.findByIdAndUpdate (
     req.params.id,
     req.body,
     {new:true}, (err, updatedPost) => {
@@ -107,7 +111,7 @@ const updatePost = (req, res) => {
 }
 
 const destroyPost = (req, res) => {
-    db.Posts.findByIdAndDelete(req.params.id, (err, deletedPost) => {
+    Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
         if (err){
             return res.status(400).json({
                 message: "cannot delete post",
