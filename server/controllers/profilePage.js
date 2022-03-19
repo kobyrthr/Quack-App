@@ -48,13 +48,13 @@ const userPosts = (req, res) =>{
       })
     }
     console.log(foundProfile);
-    foundProfile.posts.find().exec((err, allPosts) => {
-      if (err){
-        return res.status(400),json({
-          message: "cannot find all the user posts",
-          error: err
-        })
-      }
+    //foundProfile.posts.find().exec((err, allPosts) => {
+      //if (err){
+        //return res.status(400),json({
+          //message: "cannot find all the user posts",
+          //error: err
+       // })
+     // }
       return res.status(200).json({
         message: "found all the user posts",
         data: allPosts
