@@ -1,8 +1,8 @@
 .username {
-    width: 30rem;
+    width: 32rem;
 }
 .password { 
-    width: 30rem;
+    width: 33.25rem;
 }
 input {
     padding: 5px;
@@ -17,7 +17,7 @@ h6 {
     width: 450px;
     background-color: #232629;
     margin-top: 7rem;
-    padding: 70px;
+    padding: 60px;
     border-radius: 2%;
 }
 .title {
