@@ -9,21 +9,26 @@ const Post = require('../models/Posts')
                 error:err
             })
         }
-        else {console.log(allPosts)}
+        else {
+            
+            Post.create({
+                content:"hi i'm a post"
+            }),
+            console.log(allPosts)
+        
+        }
     }
 
     )
+}
+
+function createPost (req,res){
+    Post.create({
+        content:"hi i'm a post"
+    })
 }
 
 module.exports = {
     index,
     
 }
-
-// .Posts.find().exec((err, allPosts) => {
-//     if (err){
-//       return res.status(400),json({
-//         message: "cannot find all the user posts",
-//         error: err
-//       })
-//     }
