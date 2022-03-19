@@ -11,6 +11,7 @@ const cors = require('cors');
 /* === Instanced Modules === */
 const app = express();
 const routes = require('./routes');
+const authRoutes = require('./routes/auth');
 
 /* === Configuration === */
 const config = require('@Quack-App/config');
@@ -23,11 +24,12 @@ app.use(cors());
 
 /* === Routes & Controllers === */
 
-app.use("/api", require('./routes/profilePage'))
+app.use("/api", routes)
+// app.use("/auth", authRoutes)
 //app.all("/api/*", (req, res, next) => {
 //	res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
 //})
-//require('./routes/auth')
+// require('./routes/auth')
 
 
 //Data connection:
