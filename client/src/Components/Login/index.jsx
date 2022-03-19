@@ -17,7 +17,7 @@ export default function LoginPage() {
                         <h6>Username</h6>
                         <input class="username" placeholder="Email"></input>
                         <h6>Password</h6>
-                        <input class="password" placeholder="Password"></input>
+                        <input class="password" type="password" placeholder="Password"></input>
                         <br />
                             <button class="button-primary signupbtn">Sign Up</button>
                             <button class="button-secondary loginbtn">Log In</button>
