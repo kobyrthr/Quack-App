@@ -29,9 +29,6 @@ app.all("/api/*", (req, res, next) => {
 })
 require('./routes/auth')
 
-app.all("/api/*", (req, res, next) => {
-	res.send("Not the backend APIs we want")
-})
 //SUPER AMAZING MAGICAL MONOREPO FULL STACK MIDDLEWARE
 //This targets all routes that aren't specified by our specific server routes that are not "/api"
 //ANY REQUESTS not covered by our routes will get piped into this middleware! This literally hands over control to React

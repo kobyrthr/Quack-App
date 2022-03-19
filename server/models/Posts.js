@@ -7,25 +7,25 @@ const postSchema = new Schema(
             type: String,
             maxlength: 300,
             required: true,
-        },
-        date: {
-            type: Date,
-            default: Date.now,
-        },
-        profile: {
-            type: Schema.Types.ObjectId, 
-            ref: "Profile",
-        },
-        comments: {
-            type: Schema.Types.ObjectId, 
-            ref: "Comments",
-        },
-        quack: {
-            type: [String]
         }
-    },
-    {
-        timestamps: true
+    //     date: {
+    //         type: Date,
+    //         default: Date.now,
+    //     },
+    //     profile: {
+    //         type: Schema.Types.ObjectId, 
+    //         ref: "Profile",
+    //     },
+    //     comments: {
+    //         type: Schema.Types.ObjectId, 
+    //         ref: "Comments",
+    //     },
+    //     quack: {
+    //         type: [String]
+    //     }
+    // },
+    // {
+    //     timestamps: true
     }
 )
 
