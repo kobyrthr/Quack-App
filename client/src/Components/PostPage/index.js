@@ -6,7 +6,7 @@ import * as postService from '../../api/posts.service';
 const fetchPosts = async ()=>{
 await postService.getAllPosts()
 .then((res)=>{
-    console.log(res.data)
+    console.log(res.data.data.reverse())
 })
 .catch(err=>{
     console.log(err)
