@@ -23,8 +23,8 @@ ReactDOM.render(
 </div> */}
 
 {/* added new components */}
-    <PostForm/>
-    <Posts />
+    {/* <PostForm/>
+    <Posts /> */}
     <LoginPage />
 
   </React.StrictMode>,

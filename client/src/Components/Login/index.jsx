@@ -1,4 +1,5 @@
-import './index.css' 
+import './index.css';
+import Ducky from './logo/ducky.png'
 
 export default function LoginPage() {
     return (
@@ -7,8 +8,10 @@ export default function LoginPage() {
 
             <div class="row one">
 
-                <div class="columns four offset-by-four">
-
+                <div class="columns four">
+                    <img src={ Ducky } />
+                    <h2>Quackapp</h2>
+                    <h6>The Message Board for Dev Students</h6>
                     <form> 
                         <h3>Log In</h3>
                         <h6>Username</h6>
