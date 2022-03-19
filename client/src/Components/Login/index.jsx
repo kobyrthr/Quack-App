@@ -1,3 +1,5 @@
+import './index.css' 
+
 export default function LoginPage() {
     return (
         <div class="container login">
@@ -5,7 +7,7 @@ export default function LoginPage() {
 
             <div class="row one">
 
-                <div class="columns four">
+                <div class="columns four offset-by-four">
 
                     <form> 
                         <h3>Log In</h3>
