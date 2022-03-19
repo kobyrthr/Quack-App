@@ -1,8 +1,8 @@
 .username {
-    width: 40vh;
+    width: 30rem;
 }
 .password { 
-    width: 40vh;
+    width: 30rem;
 }
 /* input {
     display: flex;
@@ -10,10 +10,12 @@
 } */
 input {
     padding: 5px;
+    color: #232629;
 }
 h6 {
     margin-bottom: 2px;
     font-size: 12px;
+
 }
 /* .container.login {
     height: 500px;
@@ -25,9 +27,22 @@ h6 {
 } */
 
 .container.login {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+    height: 550px;
+    width: 450px;
+    background-color: #232629;
+    margin-top: 7rem;
+    padding: 70px;
+    border-radius: 2%;
+}
+.title {
+    margin-bottom: 0px;
+}
+.subheading {
+    font-size: 10px;
+    margin-bottom: 5rem;
 }
 
+.logo {
+    height: 6vh;
+    width: 6vh;
+}

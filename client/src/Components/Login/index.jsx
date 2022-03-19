@@ -3,17 +3,17 @@ import Ducky from './logo/ducky.png'
 
 export default function LoginPage() {
     return (
-        <div class="container login">
+        <div class="container login four columns offset-by-four">
 
 
             <div class="row one">
 
-                <div class="columns four">
-                    <img src={ Ducky } />
-                    <h2>Quackapp</h2>
-                    <h6>The Message Board for Dev Students</h6>
+                <div class="columns twelve">
+                    <img src={ Ducky } class="logo" />
+                    <h2 class="title">Quackapp</h2>
+                    <h6 class="subheading">The Message Board for Dev Students</h6>
                     <form> 
-                        <h3>Log In</h3>
+                        <h5>Log In</h5>
                         <h6>Username</h6>
                         <input class="username" placeholder="Email"></input>
                         <h6>Password</h6>
