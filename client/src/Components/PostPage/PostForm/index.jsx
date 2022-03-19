@@ -1,14 +1,14 @@
 function PostForm() {
     return ( 
-        <div class="container">
+        <div className="container">
 
-            <div class="row">
+            <div className="row">
 
-            <div class="columns 12">
+            <div className="columns 12">
 
                 <form>
-                    <input class="postForm" placeholder="Send off a quick post..."></input>
-                    <button class="button-secondary">Send</button>
+                    <input className="postForm" placeholder="Send off a quick post..."></input>
+                    <button className="button-secondary">Send</button>
                 </form>
 
             </div>

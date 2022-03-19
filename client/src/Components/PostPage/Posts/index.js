@@ -1,25 +1,25 @@
-function Posts() {
+function Posts(props) {
   return (
-<div class="container">
+<div className="container">
 
   {/* THE POST FORM GOES HERE */}
 
-    <div class="row">
+    <div className="row">
 
-        <div class="columns twelve post-card">
-            <div class="profile-img"></div>
-            <div class="post-content">
+        <div className="columns twelve post-card">
+            <div className="profile-img"></div>
+            <div className="post-content">
 
                 <p><b>USERNAME on DATE</b></p>
-                <p>Hey y'all. It's been a while. Can we do an update thread? What's new in your world?</p>
+                <p>{props.content}</p>
 
-                <div class="post-action-bar">
+                <div className="post-action-bar">
 
-                    <div class="post-action">
+                    <div className="post-action">
                         4<img src="assets/Speech Bubble.png" alt=""></img>
                     </div>
 
-                    <div class="post-action">
+                    <div className="post-action">
                         10<img src="assets/upvote button.png" alt=""></img>
 
                     </div>

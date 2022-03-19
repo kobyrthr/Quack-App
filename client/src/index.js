@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './normalize.css'
 import './skeleton.css'
 import './index.css'
-import Posts from './Components/PostPage/Posts'
-import PostForm from './Components/PostPage/PostForm';
+import App from './App'
+import PostPage from './Components/PostPage'
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,8 +22,7 @@ ReactDOM.render(
 </div> */}
 
 {/* added new components */}
-    <PostForm/>
-    <Posts />
+    <PostPage/>
 
   </React.StrictMode>,
   document.getElementById('root')
