@@ -6,6 +6,7 @@ import './index.css'
 import Posts from './Components/PostPage/Posts'
 import PostForm from './Components/PostPage/PostForm';
 import LoginPage from './Components/Login'
+import EditProfilePage from './Pages/EditProfile'
 
 
 ReactDOM.render(
@@ -25,7 +26,8 @@ ReactDOM.render(
 {/* added new components */}
     {/* <PostForm/>
     <Posts /> */}
-    <LoginPage />
+    {/* <LoginPage /> */}
+    <EditProfilePage />
 
   </React.StrictMode>,
   document.getElementById('root')
