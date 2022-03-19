@@ -1,7 +1,7 @@
 const Post = require('../models/Posts')
 
  function index(req,res){
-    res.send('Post Page here!'),
+    // res.send('Post Page here!'),
     Post.find().exec((err,allPosts)=>{
         if (err){
             return res.status(400), json({
@@ -9,13 +9,10 @@ const Post = require('../models/Posts')
                 error:err
             })
         }
-        else {
-            // Post.create({
-            //     content:"hi i'm a post"
-            // }),
-            console.log(allPosts)
-        
-        }
+        return res.status(200).json({
+            message: "Success!",
+            data: allPosts, 
+        })
     }
 
     )

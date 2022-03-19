@@ -4,11 +4,14 @@ import * as postService from '../../api/posts.service';
 
 
 const fetchPosts = async ()=>{
-await postService.getAllPosts().then((res)=>{
-    console.log(res.data.data)
-}
+await postService.getAllPosts()
+.then((res)=>{
+    console.log(res.data)
+})
+.catch(err=>{
+    console.log(err)
+})
 
-)
 }
 
 function PostPage (){
