@@ -59,11 +59,8 @@ const userPosts = (req, res) =>{
         message: "found all the user posts",
         data: allPosts
       })
-
     })
-
-  })
-}
+  }
 
 const postComments = (req, res) =>{
   Post.findById(req.params.id, (err, foundPosts) => {
