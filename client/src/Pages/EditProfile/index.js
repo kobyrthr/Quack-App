@@ -2,15 +2,18 @@ import './index.css';
 import BasicInfo from '../../Components/BasicInfo/index';
 import Socials from '../../Components/Socials/index';
 import UpdatePassword from '../../Components/UpdatePassword';
-import { Route, Routes} from 'react-router-dom';
 
-export default function EditProfilePage() {
+const EditProfilePage = () => {
+    return (
     <>
     <BasicInfo />
     <Socials />
     <UpdatePassword />
     </>
+    )
 }
+
+export default EditProfilePage;
 
 // const EditProfilePage = () => {
 //     return (

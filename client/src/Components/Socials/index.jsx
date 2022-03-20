@@ -1,9 +1,9 @@
 import './index.css';
 
-export default function Socials() {
+const Socials = () => {
     return (
         <>
-        <br />
+        <div class="container">
         <h5>Socials</h5>
     <div class="row">
         <div class="columns six">
@@ -41,6 +41,9 @@ export default function Socials() {
             </input>
             </div>
             </div>
+            </div>
             </>
     )
 }
+
+export default Socials;

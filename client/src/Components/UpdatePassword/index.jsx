@@ -1,10 +1,10 @@
 import './index.css';
 
-export default function UpdatePassword() {
+const UpdatePassword = () => {
     return(
         <>
-            <hr></hr>
-
+    <div class="container">
+    <hr></hr>
             <div class="row">
                 <div class="columns six">
                     <h5>Reset Password</h5>
@@ -42,6 +42,9 @@ export default function UpdatePassword() {
             </div>
             <br />
             <br />
+            </div>
             </>
     )
 }
+
+export default UpdatePassword;

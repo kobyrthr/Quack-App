@@ -1,6 +1,6 @@
 import './index.css';
 
-export default function BasicInfo() {
+const BasicInfo = () => {
     return (
         <>
         <div class="container">
@@ -57,3 +57,5 @@ export default function BasicInfo() {
      </>               
     )
 }
+
+export default BasicInfo;
