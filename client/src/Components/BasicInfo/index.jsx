@@ -3,7 +3,11 @@ import './index.css';
 const BasicInfo = () => {
     return (
         <>
+        
         <div class="container">
+            <br />
+            <h2>Edit Profile</h2>
+            <br />
             <h5>Basic Info</h5>
                 <div class="row">
                     <div class="columns six">
@@ -51,10 +55,9 @@ const BasicInfo = () => {
                             placeholder="Briefly about me...">
                         </input>
                     </div>
-
-                    </div>
-                    </div>
-     </>               
+                </div>
+            </div>
+        </>               
     )
 }
 
