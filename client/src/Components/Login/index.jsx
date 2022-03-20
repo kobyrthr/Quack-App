@@ -1,7 +1,24 @@
+import { useState } from "react";
+import * as authService from "../../api/auth.service";
 import './index.css';
 import Ducky from './logo/ducky.png'
 
-export default function LoginPage() {
+const LoginPage = ({checkUserActive}) => {
+
+    const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		await authService.signin(email, password).then(() => {
+			{
+				checkUserActive();
+			}
+			setEmail = "";
+			setPassword = "";
+		});
+	};
+
     return (
         <div class="container login four columns offset-by-four">
 
@@ -9,23 +26,35 @@ export default function LoginPage() {
             <div class="row one">
 
                 <div class="columns twelve">
-                    <img src={ Ducky } class="logo" />
+                    <img src={ Ducky } class="logo" alt="a rubber duck"/>
                     <h2 class="title">Quackapp</h2>
                     <h6 class="subheading">The Message Board for Dev Students</h6>
                     <form> 
                         <h5>Log In</h5>
-                        <h6>Username</h6>
+                        <h6>Email</h6>
                         <input 
-                               class="username" 
-                               placeholder="Email">
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            type="text"
+                            name="email"
+                            class="username" 
+                            placeholder="Email">
                         </input>
                         <h6>Password</h6>
-                        <input class="password" 
-                               type="password" placeholder="Password"
+                        <input 
+                            class="password" 
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            type="text"
+                            name="password"
+                            placeholder="password"
                         ></input>
                         <br />
                             <button class="button-primary signupbtn">Sign Up</button>
-                            <button class="button-secondary loginbtn">Log In</button>
+                            <button 
+                            class="button-secondary loginbtn"
+                            onClick={handleSubmit}
+                            >Log In</button>
                     </form>
 
                 </div>
@@ -37,3 +66,4 @@ export default function LoginPage() {
 }
 
 
+export default LoginPage
