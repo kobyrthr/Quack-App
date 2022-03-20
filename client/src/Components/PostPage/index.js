@@ -1,26 +1,57 @@
 import Posts from './Posts'
 import PostForm from './PostForm';
 import * as postService from '../../api/posts.service';
+import { useReducer,useEffect } from 'react';
 
 
-const fetchPosts = async ()=>{
-await postService.getAllPosts()
-.then((res)=>{
-    console.log(res.data.data.reverse())
-})
-.catch(err=>{
-    console.log(err)
-})
+const reducer = (prevState, action) => {
+	switch(action.type) {
+		case "setPosts":
+			return {...prevState, posts: action.payload};
+		// case "setIsLoggedIn":
+		// 	return {...prevState, isLoggedIn: action.payload};
+		default: 
+			return prevState
+	}
+}
 
+const initialState = {
+	// isLoggedIn: false,
+	posts: []
 }
 
 function PostPage (){
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+	const { posts } = state;
+
+    const fetchPosts = async ()=>{
+        await postService.getAllPosts()
+        .then((res)=>{
+            dispatch({ type: "setPosts", payload: res.data.data.reverse() })
+        })
+        
+        }
+
+        useEffect(() => {
+            fetchPosts();
+            // checkLogin();
+        }, []);
 
     fetchPosts()
     return (
         <div className="container">
             <PostForm/>
-            <Posts/>
+            {posts.map( (post)=>{
+                return(
+
+                    <Posts
+                        content={post.content}
+                    />
+                )
+            }
+
+            )}
         </div>
           );
 }
