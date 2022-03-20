@@ -1,4 +1,4 @@
-function Posts() {
+function Posts(props) {
   return (
 <div class="container">
 
@@ -10,8 +10,8 @@ function Posts() {
             <div class="profile-img"></div>
             <div class="post-content">
 
-                <p><b>USERNAME on DATE</b></p>
-                <p>Hey y'all. It's been a while. Can we do an update thread? What's new in your world?</p>
+                <p><b>AUTHOR <span>on</span> DATE</b></p>
+                <p>{props.content}</p>
 
                 <div class="post-action-bar">
 

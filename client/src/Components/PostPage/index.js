@@ -47,6 +47,8 @@ function PostPage (){
 
                     <Posts
                         content={post.content}
+                        author={post.profile}
+                        date={post.date}
                     />
                 )
             }
