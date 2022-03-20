@@ -1,7 +1,7 @@
 import './index.css';
 import Ducky from './logo/ducky.png'
 
-const LoginPage = () => {
+const LoginComponent = () => {
     return (
         <div class="container login four columns offset-by-four">
 
@@ -36,4 +36,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage;
+export default LoginComponent;

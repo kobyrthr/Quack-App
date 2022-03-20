@@ -1,4 +1,3 @@
-import './index.css';
 import BasicInfo from '../../Components/BasicInfo/index';
 import Socials from '../../Components/Socials/index';
 import UpdatePassword from '../../Components/UpdatePassword';
