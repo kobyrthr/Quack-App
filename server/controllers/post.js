@@ -18,7 +18,26 @@ const Post = require('../models/Posts')
     )
 }
 
+
+const createPost =(req, res) => {
+    Post.create(req.body, (err, savedPost) => {
+      if(err){
+        return res.status(400).json({
+          message: "Cannot save the post",
+          error: err
+        })
+      }
+      console.log(savedPost);
+      return res.status(201).json({
+        message:"successful in creating the post",
+        data: savedPost
+      })
+    })
+  
+  }
+
 module.exports = {
     index,
+    createPost
     
 }

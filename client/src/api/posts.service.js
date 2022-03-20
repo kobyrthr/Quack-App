@@ -7,6 +7,7 @@ const getAllPosts = ()=>{
     return clientAPIs.get(`${post}`)
 }
 
+
 const getProfile = () =>{
   return clientAPIs.get(`${profilePage}`)
 }
@@ -17,7 +18,7 @@ const getPostComments = (id) =>{
     return clientAPIs.get(`${profilePage}/${id}/comments`);
 }
 const createPost = (data) =>{
-    return clientAPIs.post(`${profilePage}`, data)
+    return clientAPIs.post(`${post}`, data)
 }
 const updatePost = (id, data) =>{
     return clientAPIs.put(`${profilePage}/${id}`, data);
@@ -26,4 +27,4 @@ const destroyPost = (id) =>{
     return clientAPIs.delete(`${profilePage}/${id}`);
 }
 
-export {getAllPosts,getProfile, getPosts, getPostComments, destroyPost}
+export {createPost,getAllPosts,getProfile, getPosts, getPostComments, destroyPost}
