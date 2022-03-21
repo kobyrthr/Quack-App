@@ -25,10 +25,10 @@ ReactDOM.render(
 </div> */}
 
 {/* added new components */}
-<PostPage/>
+{/* <PostPage/> */}
     {/* <PostForm/>
     <Posts /> */}
-    {/* <LoginPage /> */}
+    <LoginPage />
     {/* <EditProfilePage /> */}
 
   </React.StrictMode>,
