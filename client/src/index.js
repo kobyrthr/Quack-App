@@ -7,7 +7,9 @@ import PostPage from './Components/PostPage'
 import Posts from './Components/PostPage/Posts'
 import PostForm from './Components/PostPage/PostForm';
 import LoginPage from './Components/Login'
+import SignUp from './Components/SignUp'
 import EditProfilePage from './Pages/EditProfile'
+
 
 
 ReactDOM.render(
@@ -29,6 +31,7 @@ ReactDOM.render(
     {/* <PostForm/>
     <Posts /> */}
     <LoginPage />
+    <SignUp />
     {/* <EditProfilePage /> */}
 
   </React.StrictMode>,

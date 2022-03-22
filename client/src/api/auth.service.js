@@ -3,20 +3,20 @@ import clientAPIs from "./axios.config.js";
 const auth = "/auth";
 const users = "/users";
 
-const signup = (email, password) => {
+const signup = (username, password) => {
     return clientAPIs
-        .post(`${auth}/signup`, {email, password})
+        .post(`${auth}/signup`, {username, password})
         .then((res) => {
             console.log(res)
         })
 
 }
 
-const signin = (email, password) => {
+const signin = (username, password) => {
     console.log("before try in login")
     try {  
         return clientAPIs
-            .post(`${auth}/signin`, {email, password})
+            .post(`${auth}/signin`, {username, password})
             .then((res) => {
                 console.log(res)
                 if (res.data.token) {

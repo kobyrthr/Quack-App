@@ -5,16 +5,16 @@ import Ducky from './logo/ducky.png'
 
 const LoginPage = ({checkUserActive}) => {
 
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		await authService.signin(email, password).then(() => {
+		await authService.signin(username, password).then(() => {
 			{
 				checkUserActive();
 			}
-			setEmail = "";
+			setUsername = "";
 			setPassword = "";
 		});
 	};
@@ -31,14 +31,14 @@ const LoginPage = ({checkUserActive}) => {
                     <h6 class="subheading">The Message Board for Dev Students</h6>
                     <form> 
                         <h5>Log In</h5>
-                        <h6>Email</h6>
+                        <h6>Username</h6>
                         <input 
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
                             type="text"
-                            name="email"
+                            name="username"
                             class="username" 
-                            placeholder="Email">
+                            placeholder="Username">
                         </input>
                         <h6>Password</h6>
                         <input 

@@ -6,7 +6,7 @@ const User = require("../models/User");
 
 const signUp = async (req,res) => {
 	// console.log(req.body)
-	console.log(User)
+	// console.log(User)
 	// we need to encrypt our passwords
       // we can use the bcrypt libary for this
       // we need to import the library at the top of our file
