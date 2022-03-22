@@ -61,7 +61,7 @@ const logIn = async (req,res) => {
    User.findOne({
 	   username: req.body.username
    },(err, user) => {
-		console.log(user)
+		console.log("this is the user:",user)
 		let passwordIsValid = bcrypt.compareSync(
 			req.body.password,
 			user.password

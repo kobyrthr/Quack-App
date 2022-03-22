@@ -1,6 +1,8 @@
 import Posts from './Posts'
 import PostForm from './PostForm';
 import * as postService from '../../api/posts.service';
+import * as authService from '../../api/auth.service';
+
 import { useReducer,useEffect } from 'react';
 
 
@@ -8,22 +10,22 @@ const reducer = (prevState, action) => {
 	switch(action.type) {
 		case "setPosts":
 			return {...prevState, posts: action.payload};
-		// case "setIsLoggedIn":
-		// 	return {...prevState, isLoggedIn: action.payload};
+		case "setIsLoggedIn":
+			return {...prevState, isLoggedIn: action.payload};
 		default: 
 			return prevState
 	}
 }
 
 const initialState = {
-	// isLoggedIn: false,
+	isLoggedIn: false,
 	posts: []
 }
 
 function PostPage (){
 
     const [state, dispatch] = useReducer(reducer, initialState);
-	const { posts } = state;
+	const { posts, isLoggedIn } = state;
 
     const fetchPosts = async ()=>{
         await postService.getAllPosts()
@@ -32,30 +34,45 @@ function PostPage (){
         })
         
         }
+    const checkLogin = () => {
+            if(authService.currentUser()) {
+                dispatch({type: "setIsLoggedIn", payload: true})
+            }else {
+                dispatch({type: "setIsLoggedIn", payload: false})
+            }
+        }
+    
 
         useEffect(() => {
             fetchPosts();
-            // checkLogin();
+            checkLogin();
         }, []);
 
-    fetchPosts()
-    return (
-        <div className="container">
-            <PostForm/>
-            {posts.map( (post)=>{
-                return(
 
-                    <Posts
-                        content={post.content}
-                        author={post.profile}
-                        date={post.date}
-                    />
-                )
-            }
+        if (isLoggedIn) {
 
-            )}
-        </div>
-          );
+            fetchPosts()
+            return (
+                <div className="container">
+                    <PostForm/>
+                    {posts.map( (post)=>{
+                        return(
+        
+                            <Posts
+                                content={post.content}
+                                author={post.profile}
+                                date={post.date}
+                            />
+                        )
+                    }
+        
+                    )}
+                </div>
+                  );
+        }
+
+
+
 }
 
 export default PostPage 
