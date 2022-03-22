@@ -27,10 +27,11 @@ ReactDOM.render(
 </div> */}
 
 {/* added new components */}
-    <LoginPage />
-    <SignUp />
+{/* <PostPage/> */}
     {/* <PostForm/>
     <Posts /> */}
+    <LoginPage />
+    <SignUp />
     <PostPage/>
     {/* <EditProfilePage /> */}
 

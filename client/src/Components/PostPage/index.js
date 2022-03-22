@@ -49,7 +49,7 @@ function PostPage (){
         }, []);
 
 
-     
+        
 
             fetchPosts()
             return (
@@ -69,6 +69,7 @@ function PostPage (){
                     )}
                 </div>
                   );
+        
 
 
 
