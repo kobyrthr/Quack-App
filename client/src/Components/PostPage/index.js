@@ -49,7 +49,7 @@ function PostPage (){
         }, []);
 
 
-        if (isLoggedIn) {
+     
 
             fetchPosts()
             return (
@@ -69,7 +69,6 @@ function PostPage (){
                     )}
                 </div>
                   );
-        }
 
 
 

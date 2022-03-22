@@ -24,6 +24,10 @@ function Posts(props) {
 
                     </div>
 
+                    <form action="/?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete"></input>
+                    </form>
+
                 </div>
 
                 

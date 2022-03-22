@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as authService from "../../api/auth.service";
+import './index.css';
 
 const Signup = () => {
 	const [username, setUsername] = useState("");
@@ -16,6 +17,10 @@ const Signup = () => {
 
 	return (
 		<div>
+		 <div class="container login four columns offset-by-four">
+
+			<div class="row one">
+
 			<form >
 				<label htmlFor="username">
                     Username
@@ -44,6 +49,13 @@ const Signup = () => {
 				</button>
 				<h1 style={{ color: "green" }}>{successMsg}</h1>
 			</form>
+
+			</div>
+
+		 </div>
+
+
+			
 		</div>
 	);
 };
