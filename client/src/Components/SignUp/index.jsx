@@ -14,9 +14,19 @@ const Signup = () => {
 
 	return (
 		<div>
-			<form >
+			<form
+			style={{
+				// display:'flex',
+				flexDirection:'column',
+				maxWidth:'400px',
+				backgroundColor:'#393d47',
+				padding:'70px',
+				margin:'0 auto'
+
+				}}
+			 >
 				<label htmlFor="username">
-                    Username
+                    
 					<input
 						
 						onChange={(e) => setUsername(e.target.value)}
@@ -27,7 +37,7 @@ const Signup = () => {
 					/>
 				</label>
 				<label htmlFor="password">
-                    Password
+                    
 					<input
 					
 						onChange={(e) => setPassword(e.target.value)}
