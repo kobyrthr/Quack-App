@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter} from 'react-router-dom';
 import './normalize.css'
 import './skeleton.css'
 import './index.css'
 import PostPage from './Components/PostPage'
 import Posts from './Components/PostPage/Posts'
 import PostForm from './Components/PostPage/PostForm';
-import LoginPage from './Components/Login'
-import EditProfilePage from './Pages/EditProfile'
+import EditProfilePage from './Pages/EditProfile';
 
 
 ReactDOM.render(
@@ -29,7 +29,11 @@ ReactDOM.render(
     {/* <PostForm/>
     <Posts /> */}
     {/* <LoginPage /> */}
+
     {/* <EditProfilePage /> */}
+    <BrowserRouter>
+    <EditProfilePage />
+    </BrowserRouter>
 
   </React.StrictMode>,
   document.getElementById('root')

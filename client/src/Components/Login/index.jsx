@@ -3,6 +3,7 @@ import * as authService from "../../api/auth.service";
 import './index.css';
 import Ducky from './logo/ducky.png'
 
+
 const LoginPage = ({checkUserActive}) => {
 
     const [email, setEmail] = useState("");
@@ -19,6 +20,8 @@ const LoginPage = ({checkUserActive}) => {
 		});
 	};
 
+
+const LoginComponent = () => {
     return (
         <div class="container login four columns offset-by-four">
 
@@ -66,4 +69,7 @@ const LoginPage = ({checkUserActive}) => {
 }
 
 
+
 export default LoginPage
+export default LoginComponent;
+
