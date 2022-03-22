@@ -19,6 +19,7 @@
     "dev": "concurrently --kill-others --handle-input -n client,server 'npm:start-client-dev' 'npm:start-server-dev'"
   },
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "react-router-dom": "^6.2.2"
   }
 }
