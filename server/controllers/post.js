@@ -52,8 +52,26 @@ const createPost =(req, res) => {
   
     )
   }
+
+const destroyPost = (req, res) => {
+    Post.findByIdAndDelete(req.params.id, (err, deletedPost) => {
+        if (err){
+            return res.status(400).json({
+                message: "cannot delete post",
+                error: err,
+            })
+        }
+        return res.status(200).json({
+            message: "Post deletion is a Success!",
+            data: deletedPost
+        })
+    })
+}
+
 module.exports = {
     index,
-    createPost
+    createPost,
+    updatePost,
+    destroyPost
     
 }
